@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token()}}">
         <title>@yield('title')</title>
-        <script src="{{ secure_asset('js/app.js')}}"defer></script>
+        <script src="{{ asset('js/app.js')}}"defer></script>
         <link rel="dns-prefetch"href="fttps://fonts.gstatic.com/css?family=Raleway:300,400,600" rel="stylesheet"type="text/css">
-        <link href="{{ secure_asset('css/admin.css')}}"rel="stylesheet">
+        <link href="{{ asset('css/admin.css')}}"rel="stylesheet">
     </head>
     <body>
         <div id="app">
@@ -32,3 +32,8 @@
     </body>
 </html>
 
+1.Bladeテンプレートで、埋め込みたい箇所に利用するワードは何だったでしょうか？
+コンテンツ
+
+2.Webpackで使われているBootstrapやSCSSはどういったものか、調べられる範囲で調べてみましょう
+bootstrapは、WEB画面を作るときに便利なCSSフレームワークの一つで携帯でアクセスしたときに画面サイズが調整されるなど見やすくなる

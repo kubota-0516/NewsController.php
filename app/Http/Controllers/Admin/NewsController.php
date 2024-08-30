@@ -10,12 +10,12 @@ class NewsController extends Controller
     //
     public function add()
     {
-        return view('admin.profile.create');
+        return view('admin.news.create');
     }
 
     public function create()
     {
-        return redirect('admin/profile/create');
+        return redirect('admin/news/create');
     }
 
     public function edit()
