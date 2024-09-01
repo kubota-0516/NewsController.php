@@ -44,7 +44,7 @@
                                             <label>
                                                 <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('messages.remember_me') }}
                                             </label>
-                                        </div>
+                                        </div>                                                                           
                                     </div>
                                 </div>
 
