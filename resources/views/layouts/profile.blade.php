@@ -7,15 +7,14 @@
         <meta name="csrf-token" content="{{ csrf_token()}}">
         <title>@yield('title')</title>
         <script src="{{ asset('js/app.js')}}" defer></script>
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
-        <link href="{{ asset('css/admin.css')}}" rel="stylesheet">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/css?family=Raleway:300,400,600" rel="stylesheet"type="text/css">
+        <link href="{{ secure_asset('css/profile.css') }}" rel="stylesheet">
     </head>
     <body>
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-darknavbar-laravel">
                 <div class="contanier">
                     <a class="navbar-brand" href="{{url('/')}}">
-                    {{ config('app.name', 'Laravel') }}
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarsSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -45,7 +44,7 @@
                 </div>
             </nav>
             <main class="py-4">
-            @yield('content')
+                @yield('content')
             </main>
         </div>
     </body>
