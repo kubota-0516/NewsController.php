@@ -7,7 +7,7 @@
                 <div class="login-box card text-white">
                     <div class="login-header card-header mx-auto">{{ __('messages.login') }}</div>
                     <div class="login-body card-body">
-                        <from method="post" action="{{route('login') }}">
+                        <form method="post" action="{{route('login') }}">
                             @csrf
 
                             <div class="form-group row">

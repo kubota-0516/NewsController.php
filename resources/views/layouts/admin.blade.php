@@ -8,12 +8,13 @@
         <title>@yield('title')</title>
         <script src="{{ asset('js/app.js')}}" defer></script>
         <link rel="dns-prefetch" href="https://fonts.gstatic.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/app.css')}}" rel="stylesheet">
         <link href="{{ asset('css/admin.css')}}" rel="stylesheet">
     </head>
     <body>
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-darknavbar-laravel">
-                <div class="contanier">
+                <div class="container">
                     <a class="navbar-brand" href="{{url('/')}}">
                     {{ config('app.name', 'Laravel') }}
                     </a>
