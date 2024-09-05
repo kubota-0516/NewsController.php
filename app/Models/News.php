@@ -10,6 +10,9 @@ class News extends Model
     use HasFactory;
     
     protected $guarded = array('id');
+    // public/protected/private
+    // ◯ $this->guarded
+    // ✕ $guarded
 
     public static $rules = array(
         'title' => 'required',

@@ -45,3 +45,5 @@
         </div>
     </div>
 @endsection
+
+return redirect('admin/news/create');
