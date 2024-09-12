@@ -12,6 +12,8 @@
         
     </head>
     <body>
+        <p>サンプル</p>
+        
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-darknavbar-laravel">
                 <div class="container">
