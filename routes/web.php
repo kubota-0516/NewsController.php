@@ -18,10 +18,10 @@ Route::get('/', function () {
 });
 
 
-use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\ProfileController; //ここで、どこから情報を引っ張ってくるのか指示する
 Route::controller(ProfileController::class)->prefix('admin')->middleware('auth')->group(function() {
-    Route::get('profile/create', 'add');
-    Route::get('profile/edit', 'edit');
+    Route::get('profile/create', 'add')->name('news.add');
+    Route::get('profile/edit', 'edit')->name('news.edite');
 });
 
 Auth::routes();
@@ -37,5 +37,5 @@ Route::controller(NewsController::class)->prefix('admin')->name('admin.')->middl
     Route::get('news/delete', 'delete')->name('news.delete');
 });
 
-use App\Http\Controllers\NewsController as PublicNewsController;
+use App\Http\Controllers\NewsController as PublicNewsController; //上のと似ているけどas～があるので別物
 Route::get('/', [PublicNewsController::class, 'index'])->name('news.index');

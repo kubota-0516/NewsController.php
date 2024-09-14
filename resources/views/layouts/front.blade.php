@@ -10,9 +10,16 @@
         <link rel="dns-prefetch" href="https://fonts.gstatic.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/app.css')}}" rel="stylesheet">
         
+        <!-- 追加していなかった？
+        {{-- 以下を削除 --}}
+        <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet">がそもそも無かった？ -->
+        <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+        {{-- 以下を追記 --}}
+        <link href="{{ secure_asset('css/front.css') }}" rel="stylesheet">
+        
     </head>
     <body>
-        <p>サンプル</p>
+        <p>サンプル1</p>
         
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-darknavbar-laravel">
@@ -23,6 +30,8 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarsSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+
+                    <p>サンプル2</p>
 
                     <div class="collapse navbar-collapse" id="navbarSupprtedContent">
                         <ul class="navbar-nav ms-auto"></ul>
@@ -38,12 +47,16 @@
                                         {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>
 
+                                    <p>サンプル3</p>
+
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                             {{ __('messages.logout') }}
                                         </a>
+
+                                        <p>サンプル4</p>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             @csrf
