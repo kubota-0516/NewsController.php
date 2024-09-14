@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use resources\views\admin\profile\create;  //必要？
+
+
 class ProfileController extends Controller
 {
     //
