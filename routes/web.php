@@ -19,12 +19,11 @@ Route::get('/', function () {
 
 
 use App\Http\Controllers\Admin\ProfileController; //ここで、どこから情報を引っ張ってくるのか指示する
-Route::controller(ProfileController::class)->prefix('admin')->middleware('auth')->group(function() {
+Route::controller(ProfileController::class)->prefix('admin')->name('admin.')->middleware('auth')->group(function() {
     Route::get('profile/create', 'add')->name('news.add');
     Route::get('profile/edit', 'edit')->name('news.edite');
-    
-    //13の課題で追加
-    Route::post('profile/edit', 'update')->name('news.update');
+    Route::post('profile/create', 'create')->name('profile.create');//13の課題で追加
+    Route::post('profile/edit', 'update')->name('profile.update');//13の課題で追加
 });
 
 Auth::routes();
@@ -39,8 +38,6 @@ Route::controller(NewsController::class)->prefix('admin')->name('admin.')->middl
     Route::post('news/edit', 'update')->name('news.update');
     Route::get('news/delete', 'delete')->name('news.delete');
     
-    //13の課題で追加
-    Route::post('profile/create', 'create')->name('news.create');  //prohilecontrollerにuse書いたけど必要？
 });
 
 use App\Http\Controllers\NewsController as PublicNewsController; //上のと似ているけどas～があるので別物
