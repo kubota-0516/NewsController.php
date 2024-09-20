@@ -39,7 +39,8 @@
                                 <input type="file" class="form-control-file" name="image">
                             </div>
                         </div>
-                        @csrf 
+                       
+                        @csrf <!-- formの中には必要、場所はどこでも良い　-->
                         <input type="submit" class="btn btn-primary" value="更新">
                 </form>
             </div>
