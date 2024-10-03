@@ -36,6 +36,9 @@
                         <label class="col-md-2" for="introduction">自己紹介欄</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="introduction" value="{{ $profile_form->introduction }}">
+                            <input type="hidden" name="id" value="{{ $profile_form->id }}">
+                            @csrf
+                            <input type="submit" class="btn btn-primary" value="更新">
                         </div>
                     </div>
                 </form>
