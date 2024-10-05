@@ -9,6 +9,7 @@ use App\Models\Profile;
 use App\Models\History;
 use App\Models\Index;
 use Carbon\Carbon;
+use App\Models\ProfileHistory;
 
 class ProfileController extends Controller
 {
@@ -31,20 +32,20 @@ class ProfileController extends Controller
         $profile->fill($form);
         $profile->save();
          
-        return redirect('admin/profile/create');
+        return redirect('admin/profile/index');
 
     }
 
     public function index(Request $request)
     {
-        $cond_name = $request->cond_name;
-        if ($cond_name != '') {
+        $cond_title = $request->cond_title;
+        if ($cond_title != '') {
              // 検索されたら検索結果を取得する
-            $posts = Profile::where('name', $cond_name)->get();} else {
+            $posts = Profile::where('title', $cond_title)->get();} else {
                  // それ以外はすべてのprofileを取得する
                 $posts = Profile::all();
             }
-            return view('admin.profile.index', ['posts' => $posts, 'cond_name' => $cond_name]);
+            return view('admin.profile.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
 
     public function edit(Request $request)
@@ -55,7 +56,7 @@ class ProfileController extends Controller
             abort(404);
         }
         return view('admin.profile.edit', ['profile_form' => $profile]);
-
+//      ^^^^^^^^^^^ view ファイル admin.profile.index ？を表示する
     }
 
     public function update(Request $request)
@@ -86,12 +87,13 @@ class ProfileController extends Controller
         $profile->fill($profile_form)->save();
 
         // 以下を追記
-        $history = new History();
+        $history = new ProfileHistory();
         $history->profile_id = $profile->id;
         $history->edited_at = Carbon::now();
         $history->save();
 
-        return redirect('admin/profile/edit');
+        return redirect('admin/profile/index');
+//      ^^^^^^^^^^^^^^^ redirect で /admin/profile/edit ？へ移動する
     }
 
     public function delete(Request $request)

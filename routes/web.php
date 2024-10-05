@@ -20,10 +20,19 @@ Route::get('/', function () {
 
 use App\Http\Controllers\Admin\ProfileController; //ここで、どこから情報を引っ張ってくるのか指示する
 Route::controller(ProfileController::class)->prefix('admin')->name('admin.')->middleware('auth')->group(function() {
-    Route::get('profile/create', 'add')->name('news.add');
-    Route::get('profile/edit', 'edit')->name('news.edit');
+//                                                            ^^^^^^^^^^^^^^ name('admin.') で name の先頭に admin. をつけて、、、
+//                                           ^^^^^^^^^^^^^^^ prefix('admin') で URL の先頭に /admin/ をつけて、、、
+    Route::get('profile/create', 'add')->name('profile.add');
+//             ^^^^^^^^^^^^^^^^ アクセス URL を指定する
+    Route::get('profile/edit', 'edit')->name('profile.edit');
+//                                      ^^^^^^^^^^^^^^^^^ admin.news.edit 
+//              ^^^^^^^^^^^^ /admin/profile/edit にアクセスしたとき
     Route::post('profile/create', 'create')->name('profile.create');//13の課題で追加
     Route::post('profile/edit', 'update')->name('profile.update');//13の課題で追加
+    // Route::get('profile/index', 'index')->name('profile.index');
+    Route::get('profile', 'index')->name('profile.index');
+    Route::get('profile/delete', 'delete')->name('profile.delete');
+    // Route::get('profile/index', 'edit')->name('profile.edit');
 });
 
 Auth::routes();

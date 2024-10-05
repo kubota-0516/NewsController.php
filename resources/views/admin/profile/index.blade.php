@@ -8,7 +8,7 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <a href="{{ route('admin.profile.add') }}" role="button" class="btn btn-primary">更新履歴</a>
+                <a href="{{ route('admin.profile.add') }}" role="button" class="btn btn-primary">プロフィール新規作成</a>
             </div>
             <div class="col-md-8">
                 <form action="{{ route('admin.profile.index') }}" method="get">
@@ -31,19 +31,19 @@
                     <table class="table table-dark">
                         <thead>
                             <tr>
-                                <th width="10%">名前</th>
-                                <th width="20%">性別</th>
+                                <th width="20%">名前</th>
+                                <th width="10%">性別</th>
                                 <th width="50%">趣味</th>
-                                <th width="10%">自己紹介欄</th>
+                                <th width="80%">自己紹介欄</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($posts as $news)
+                            @foreach($posts as $profile)
                                 <tr>
-                                    <th>{{ $profile->name }}</th>
-                                    <td>{{ Str::limit($profile->gender, 100) }}</td>
-                                    <td>{{ Str::limit($profile->hobby, 200) }}</td>
-                                    <td>{{ Str::limit($profile->introduction, 200) }}</td>
+                                    <td>{{ Str::limit($profile->name, 30) }}</td>
+                                    <td>{{ Str::limit($profile->gender, 25) }}</td>
+                                    <td>{{ Str::limit($profile->hobby, 100) }}</td>
+                                    <td>{{ Str::limit($profile->introduction, 300) }}</td>
                                     <td>
                                         <div>
                                             <a href="{{ route('admin.profile.edit', ['id' => $profile->id]) }}">編集</a>
