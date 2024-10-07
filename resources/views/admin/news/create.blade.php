@@ -11,6 +11,7 @@
             <div class='col-md-8 mx-auto'>
                 
                 <h2>ニュース新規作成</h2>
+                <p>適当に一言　地震なんて来ませんように</p>
                 <form action="{{ route('admin.news.create')}}" method="post" enctype="multipart/form-data">
 
                     @if (count($errors) > 0)
