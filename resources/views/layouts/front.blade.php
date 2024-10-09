@@ -19,7 +19,6 @@
         
     </head>
     <body>
-        <p>サンプル1</p>
         
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-darknavbar-laravel">
@@ -31,7 +30,6 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <p>サンプル2</p>
 
                     <div class="collapse navbar-collapse" id="navbarSupprtedContent">
                         <ul class="navbar-nav ms-auto"></ul>
@@ -47,16 +45,12 @@
                                         {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>
 
-                                    <p>サンプル3</p>
-
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                             {{ __('messages.logout') }}
                                         </a>
-
-                                        <p>サンプル4</p>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             @csrf

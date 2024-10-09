@@ -8,7 +8,7 @@
         <title>@yield('title')</title>
         <script src="{{ asset('js/app.js')}}" defer></script>
         <link rel="dns-prefetch" href="https://fonts.gstatic.com/css?family=Raleway:300,400,600" rel="stylesheet"type="text/css">
-        <link href="{{ secure_asset('css/profile.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/profile.css') }}" rel="stylesheet">
     </head>
     <body>
         <div id="app">
