@@ -10,12 +10,8 @@
         <link rel="dns-prefetch" href="https://fonts.gstatic.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/app.css')}}" rel="stylesheet">
         
-        <!-- 追加していなかった？
-        {{-- 以下を削除 --}}
-        <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet">がそもそも無かった？ -->
-        <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         {{-- 以下を追記 --}}
-        <link href="{{ secure_asset('css/front.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/front.css') }}" rel="stylesheet">
         
     </head>
     <body>

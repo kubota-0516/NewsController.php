@@ -113,7 +113,7 @@ return [
     'prohibited_unless' => 'The :attribute field is prohibited unless :other is in :values.',
     'prohibits' => 'The :attribute field prohibits :other from being present.',
     'regex' => 'The :attribute format is invalid.',
-    ':attribute' => 'The :attribute に入力が必要です。',
+    'required' => ':attribute に入力が必要です。',
     ':attribute_array_keys' => 'The :attribute field must contain entries for: :values.',
     ':attribute_if' => 'The :attribute に入力が必要です。 when :other is :value.',
     ':attribute_unless' => 'The :attribute に入力が必要です。 unless :other is in :values.',
