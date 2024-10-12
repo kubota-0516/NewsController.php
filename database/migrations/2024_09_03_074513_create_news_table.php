@@ -29,7 +29,8 @@ return new class extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down() //Migrationの取り消しをおこなうためのコードを書きます。
+                            //ここでは、もしnewsというテーブルが存在すれば削除する、と書かれています。
     {
         Schema::dropIfExists('news');
     }

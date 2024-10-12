@@ -14,9 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('histories', function (Blueprint $table) {
+                       //テーブル名(複数形)
             $table->id();
             $table->bigInteger('news_id');
-            $table->string('edited_at');
+            $table->string('edited_at'); //カラム名
             $table->timestamps();
         });
     }
