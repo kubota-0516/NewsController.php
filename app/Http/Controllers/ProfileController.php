@@ -3,19 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Profile;
 
 class ProfileController extends Controller
 {
     public function index(Request $request)
     {
-        $poost = Profile::all()->sortByDesc('updated_at');
+        $posts = Profile::all()->sortByDesc('updated_at');
 
         if (count($posts) > 0) {
-            $sheadline = $posts->shift(); //配列の最初のデータを削除し、その値を返すメソッド
+            $headline = $posts->shift(); //配列の最初のデータを削除し、その値を左いシフトする（返す）メソッド
         } else {
             $headline = null;
         }
 
-        return view('plofile.index', ['headline' => $headline, 'posts' => $posts]);
+        return view('profile.index', ['headline' => $headline, 'posts' => $posts]);
     }
 }

@@ -38,14 +38,14 @@ class ProfileController extends Controller
 
     public function index(Request $request)
     {
-        $cond_title = $request->cond_title;
-        if ($cond_title != '') {
+        $cond_name = $request->cond_name;
+        if ($cond_name != '') {
              // 検索されたら検索結果を取得する
-            $posts = Profile::where('title', $cond_title)->get();} else {
+            $posts = Profile::where('name', $cond_name)->get();} else {
                  // それ以外はすべてのprofileを取得する
                 $posts = Profile::all();
             }
-            return view('admin.profile.index', ['posts' => $posts, 'cond_title' => $cond_title]);
+            return view('admin.profile.index', ['posts' => $posts, 'cond_name' => $cond_name]);
     }
 
     public function edit(Request $request)
@@ -92,7 +92,7 @@ class ProfileController extends Controller
         $history->edited_at = Carbon::now();
         $history->save();
 
-        return redirect('admin/profile/index');
+        return redirect()->back(); //元に戻る便利なコード
 //      ^^^^^^^^^^^^^^^ redirect で /admin/profile/edit ？へ移動する
     }
 

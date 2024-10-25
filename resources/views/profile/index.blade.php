@@ -1,4 +1,4 @@
-@extends('layouts.profile')
+@extends('layouts.front')
 
 @section('content')
     <div class="container">
@@ -11,16 +11,22 @@
                             <div class="caption mx-auto">
                                 <div class="image">
                                     @if ($headline->image_path)
-                                        <img src="{{ secure_asset('storage/image/' . $headline->image_path) }}">
+                                        <img src="{{ asset('storage/image/' . $headline->image_path) }}">
                                     @endif
                                 </div>
-                                <div class="title p-2">
-                                    <h1>{{ Str::limit($headline->title, 70) }}</h1>
+                                <div class="name p-2">
+                                    <h1>{{ Str::limit($headline->name, 70) }}</h1>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <p class="body mx-auto">{{ Str::limit($headline->body, 650) }}</p>
+                        <div class="gender p-2">
+                            <p class="gender mx-auto">{{ Str::limit($headline->gender, 50) }}</p>
+                        </div>
+                        <div class="hobby p-2">
+                            <p class="hobby mx-auto">{{ Str::limit($headline->hobby, 70) }}</p>
+                        </div>
+                        <div class="introduction p-2">
+                            <p class="introduction mx-auto">{{ Str::limit($headline->introduction, 70) }}</p>
                         </div>
                     </div>
                 </div>
@@ -36,8 +42,8 @@
                                 <div class="date">
                                     {{ $post->updated_at->format('Y年m月d日') }}
                                 </div>
-                                <div class="title">
-                                    {{ Str::limit($post->title, 150) }}
+                                <div class="name">
+                                    {{ Str::limit($post->name, 150) }}
                                 </div>
                                 <div class="body mt-3">
                                     {{ Str::limit($post->body, 1500) }}
@@ -45,7 +51,7 @@
                             </div>
                             <div class="image col-md-6 text-right mt-4">
                                 @if ($post->image_path)
-                                    <img src="{{ secure_asset('storage/image/' . $post->image_path) }}">
+                                    <img src="{{ asset('storage/image/' . $post->image_path) }}">
                                 @endif
                             </div>
                         </div>
