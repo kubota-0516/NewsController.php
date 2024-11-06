@@ -32,7 +32,7 @@ class ProfileController extends Controller
         $profile->fill($form);
         $profile->save();
          
-        return redirect('admin/profile/index');
+        return redirect('admin/profile');
 
     }
 
@@ -92,7 +92,8 @@ class ProfileController extends Controller
         $history->edited_at = Carbon::now();
         $history->save();
 
-        return redirect()->back(); //元に戻る便利なコード
+        return redirect('admin/profile');
+        // return redirect()->back(); //元に戻る便利なコード
 //      ^^^^^^^^^^^^^^^ redirect で /admin/profile/edit ？へ移動する
     }
 
