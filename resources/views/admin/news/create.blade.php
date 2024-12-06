@@ -42,7 +42,7 @@
                         </div>
                        
                         @csrf <!-- formの中には必要、場所はどこでも良い　-->
-                        <input type="submit" class="btn btn-primary" value="更新">
+                        <input type="submit" class="btn btn-primary" value="保存">
                 </form>
             </div>
         </div>
